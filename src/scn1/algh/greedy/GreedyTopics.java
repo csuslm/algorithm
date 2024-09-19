@@ -1,34 +1,34 @@
 package scn1.algh.greedy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeMap;
+import javax.management.monitor.Monitor;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GreedyTopics {
 
-    public static void main(String[] args) {
-        TreeMap<String,String> map = new TreeMap<>();
-        map.put("1","val");
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
-        list.add(7);
-        List<Integer> integers = list.subList(0, 2);
-        for (Integer a : integers) {
-            if(a == 1){
-                list.add(19);
+    public static void main(String []args){
+        Scanner sca=new Scanner(System.in);
+        int n=sca.nextInt();
+        int k=sca.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i<n;++i){
+            a[i]=sca.nextInt();
+        }
+        Arrays.sort(a);
+        int l=0,r=0;
+        int ans=0;
+        while(r<n){
+            if((a[r]-a[l])>k){
+                l++;
             }
+            //记录下最大的能选数字数量
+            ans=Math.max(ans,r-l+1);
+            //右指针移动
+            r++;
         }
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        System.out.println(ans);
     }
+
     public int findContentChildren(int[] g, int[] s) {
         int res = 0;
         Arrays.sort(g);
@@ -42,4 +42,6 @@ public class GreedyTopics {
         }
         return res;
     }
+
+
 }

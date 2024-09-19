@@ -21,4 +21,12 @@ public class BackTrackTopics {
         }
     }
 
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        return res;
+    }
+    public void backTrack(List<Integer> states,int[] choices,List<List<Integer>> res){
+
+    }
+
 }

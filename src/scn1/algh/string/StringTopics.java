@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class StringTopics {
     public static void main(String[] args) {
-        StringTopics stringTopics = new StringTopics();
-        System.out.println(stringTopics.turnStrToNumberStr("a1b2c3"));
+        reverseWords("   hello world   ");
     }
 
     /**
@@ -162,6 +161,23 @@ public class StringTopics {
             }
             next[i] = j;//将相同前后缀的长度赋值给next[i]
         }
+    }
+
+
+    /**
+     * 反转字符串中的单词
+     */
+    public static String reverseWords(String s) {
+        String[] s1 = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = s1.length - 1; i >= 0; i--) {
+            if (!s1[i].equals("") && !s1[i].isEmpty()) {
+                sb.append(s1[i]);
+                sb.append(" ");
+            }
+        }
+        sb.deleteCharAt(sb.length()-1);
+        return new String(sb);
     }
 
 }

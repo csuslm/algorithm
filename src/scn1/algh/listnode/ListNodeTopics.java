@@ -1,9 +1,28 @@
 package scn1.algh.listnode;
 
 
+import java.util.*;
+import java.util.stream.Stream;
+
 public class ListNodeTopics {
     public static void main(String[] args) {
 
+    }
+
+    /**
+     * @param head
+     * @return
+     */
+    public ListNode reverse(ListNode head) {
+        ListNode cur = head;
+        ListNode pre = null;
+        while (cur != null) {
+            ListNode tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        return pre;
     }
 
     /**
