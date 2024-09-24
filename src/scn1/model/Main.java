@@ -36,6 +36,7 @@ public class Main {
     public static Main getInstance(){
         if(main == null){
             synchronized (Main.class){
+                //双重校验，防止两个线程同时进入上一个if(main == null)
                 if(main == null){
                     main = new Main();
                 }
